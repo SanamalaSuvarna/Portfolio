@@ -1,0 +1,479 @@
+/* It applicable for all  */
+*{
+    /* it will give top size */
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family:'poppins',sans-serif;
+}
+/* it will go to the particular one when we click that */
+html{
+    scroll-behavior: smooth;
+}
+/* It applicable for body   */
+body{
+    background: #080808;
+    color:#fff;
+}
+/* It applicable for headings */
+#header{
+    width:100%;
+    height: 100vh;
+    background-image: url(./background...............png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    /* 10px from top and bottom,10% from left and right */
+    padding:10px 10%;
+
+}
+/* img */
+nav{
+    /* image nd links will be side by side */
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    /* The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked. */
+    flex-wrap: wrap;
+}
+/* for logo */
+.logo{
+    width:140px;
+}
+/* this is for home ,contact positions */
+nav ul li{
+    /*  wrap text and other content to give them space and set them apart when beside other content. */
+display:inline-block;
+list-style: none;
+margin:10px 20px;
+}
+/* this is for home ,contact color */
+nav ul li a{
+    color:#fff;
+    text-decoration:none ;
+    font-size: 18px;
+    position: relative;
+}
+/* color for home,contact  */
+nav ul li a::after{
+    content: '';
+    /* if it is 100% color will be dispalyed if it is 0px nothing is dispalyed */
+    width: 0px;
+    height: 3px;
+    background: #ff004f;
+    position:absolute;
+    left:0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+/* it is displayed home color,but not others and later it will be repeated */
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 54px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color:#ff004f;
+    
+}
+/* -----------------------about me--------------------- */
+#about{
+    /* space between about and Home */
+    padding:80px 0;
+    color:#ababab;
+}
+.row{
+    /* about me position */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis:35%;
+
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+    height:100vh;
+}
+.about-col-2{
+    /* about me positions beside photo */
+    flex-basis:60%;
+}
+
+.sub-title{
+    /* about me size */
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    /* first for top 20px,0 for left and right,40px bottom */
+    margin:30px 0 30px;
+}
+/* skills,education,experiance */
+.tab-links{
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight:500;
+    cursor:pointer;
+    position:relative;
+}
+/* color for skills,education,exper  */
+.tab-links::after{
+    content: '';
+    width:0;
+    height:3px;
+    background:#ff004f;
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    transition:0.5s;
+}
+/* for two classes we can give . */
+.tab-links.active-link::after{
+   width:50%;
+}
+/* for education */
+.tab-contents ul li{
+    list-style:none;
+    margin:10px 0;
+}
+/* education for only year */
+.tab-contents ul li span{
+    color:#cc3c6a;
+    font-size:14px;
+
+}
+/* it will be hiiden educaton years,PL for skills and experience */
+.tab-contents{
+    display:none;
+}
+.tab-contents.active-tab{
+    display:block;
+}
+/* ---------------------------services--------------------------------- */
+#services{
+    padding: 30px 0;
+}
+/* it will display contents in Horizontal Formate */
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top: 50px;
+}
+/* services list which means app design,web design like box type */
+.services-list div{
+   background: #262626;
+   padding: 50px;
+   font-size: 13px;
+   font-weight: 300;
+   /* for corner rounds */
+   border-radius: 10px; 
+   transition:  background 0.5s,transform 0.5s;
+
+}
+/* icons */
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+/* headings */
+.services-list div h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 500;
+
+}
+/* for paragraphs */
+.services-list div a{
+    text-decoration:none;
+    color: #fff;
+    font-size:12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+/* when we take over it will change background color */
+.services-list div:hover{
+    background: #ff004f;
+    /* MOVE TO services little bit up */
+    transform:translateY(-10px);
+
+}
+/*............................... portfolio ....................................................*/
+#portfolio {
+    padding: 50px 0;
+}
+.work-list{
+    /* three photos in good manner */
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:40px;
+    /* for photos to my work space */
+    margin-top: 50px;
+}
+.work{
+    border-radius:10px;
+    position:relative;
+    
+    overflow:hidden;
+
+}
+.work img{
+    width:100%;
+    border-radius: 10px;
+    display:block;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    /* first height will be 100% later 0 for hiding */
+    height: 0%;
+    /* gradient is color #ff004f is opacity*/
+    background:  linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    /* content should be center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align:center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+/* headings */
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+ }
+ /* icon */
+ .layer a{
+    /* space */
+    margin-top: 20px;
+    color:#ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background:#ffff;
+    width:60px;
+    height:60px;
+    /* circle */
+    border-radius: 50%;
+    text-align: center;
+ }
+ /* when we should take cursor it should increase the size it means zoom in */
+ .work:hover img{
+    transform: scale(1.1);
+ }
+ /* it will increase the height */
+ .work:hover .layer{
+      height:100%;
+ }
+ /* see more button */
+ .btn{
+    display:block;
+    margin: 50px auto;
+    width:fit-content;
+    border: 1px solid;
+    /* some space between btn */
+    padding:14px 50px;
+    border-radius: 6px;
+    color:aliceblue;
+    transition: background 0.5s;
+    
+ }
+ .btn:hover{
+    background: blue;
+ }
+/* ------------------contact-------------------------- */
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+    
+}
+/* email */
+.contact-left p{
+    margin-top: 30px;
+}
+/* for icons space */
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 25px;
+    font-size: 25px;
+}
+/* social media icons */
+.social-icons{
+    margin-top: 30px;
+}
+/* social media icons space */
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display:inline-block;
+    /* Social media icons scrolls up whenever place the cursor */
+    transition: transform 0.5s;
+}
+/* wheneevr take cursor it will chnege color */
+.social-icons a:hover{
+    color:#ff004f;
+    /* Social media icons scrolls up whenever place the cursor */
+    transform: translateY(-5px);
+}
+/* resume btn */
+.btn.btn2{
+    display:inline-block;
+    background:#cc3c6a;
+}
+/* form tag */
+.contact-right form{
+    width: 100%;
+}
+
+/* input,textarea */
+form input, form textarea{
+    width:100%;
+    border:0;
+    /* it won't give outline */
+    outline: none;
+    background: #26262626;
+    /* between name,email,text */
+    padding:15px;
+    margin: 15px 0;
+    color:#fff ;
+    font-size:18px ;
+    border-radius: 6px;
+
+}
+/* submit btn */
+form .btn2{
+    /* width will be large */
+    padding :14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+/* copyright positions */
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background:#262626 ;
+    font-weight: 300;
+    margin-top: 20px;
+}
+love symbol 
+.copyright i{
+    color: #ff004f;
+}
+/* it hides the icons in full screen */
+nav .fas{
+    display: none;
+}
+/* to look website responsive we can use media screnn css for small screens*/
+@media only screen and (max-width:600px){
+     #header{
+        background-image: url(./phone..background.jpeg);
+     }
+      /* text */
+     .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+     /* heading */
+    .header-text h1{
+        font-size: 30px;
+        
+    }
+    /* it shows  the icons in small screen menu and cross icons */
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #ff004f;
+        position:fixed;
+        top: 0;
+        /* for side pink color hidden we can change 0 to -200 becz width 200p and it will removedx */
+        right: -200px;
+        width: 200px;
+        height:100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    /* for Home,aboyut  to be in line by line*/
+    nav ul li{
+        display:block;
+        margin: 25px;
+    }
+    /* icon positions */
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor:pointer;
+
+    }
+    /* about me */
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+       flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        margin-bottom: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    /* contact */
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        flex-basis: 14px;
+    }
+}
+#msg{
+    color:rgb(67, 226, 43);
+    margin-top: -40px;
+    display:block;
+}
+
+
+
+
+
+
+
+
+
+    
